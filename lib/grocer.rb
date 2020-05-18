@@ -18,6 +18,8 @@ def consolidate_cart(cart)
   new_cart = {}
   cart.each do |thing|
     thing.each do |key, value|
+      new_cart[key] ||= value 
+      new_cart[key][count] += 1 
 
 end
 
