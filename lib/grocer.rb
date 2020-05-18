@@ -18,7 +18,7 @@ def consolidate_cart(cart)
   new_cart = {}
   cart.each do |item_hash|
     item_hash.each do |key, value|
-    if hash[key].nil?
+    if !hash[key]
       hash[key] = value.merge({:count => 1})
     else
       hash[key][:count] += 1 
