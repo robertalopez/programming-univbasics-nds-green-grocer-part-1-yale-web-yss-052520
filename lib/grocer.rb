@@ -16,13 +16,15 @@ def consolidate_cart(cart)
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   new_cart = {}
-  cart.each do |thing|
-    thing.each do |key, value|
-      new_cart[key] ||= value 
-      new_cart[key][:count] ? new_cart[key][:count] += 1 :
-      new_cart[key][:count] = 1 
+  cart.each do |item_hash|
+    item_hash.each do |key, value|
+    if hash[key].nil?
+      hash[key] = value.merge({:count => 1})
+    else
+      hash[key][:count] += 1 
     end
   end
+end 
   new_cart
 end 
 
