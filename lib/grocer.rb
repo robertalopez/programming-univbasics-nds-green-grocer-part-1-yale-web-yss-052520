@@ -19,14 +19,26 @@ def consolidate_cart(cart)
   new_cart = []
   index = 0 
   cart.each do |item_hash|
-    item_name = 
+    item = find_item_by_name_in_collection(item_hash[:item], new_cart)
     binding.pry 
-    if new_cart[index]
-      new_cart[item_name][:count] += 1 
-    else
-      new_cart[item_name] = item_hash[item_name]
-      new_cart[item_name][:count] = 1 
+    if item
+      index2 = 0 
+      while index2 < new_cart.length 
+      if new_cart[index2][:item] == item[:item]
+      new_cart[index2][:count] += 1 
+    end 
+      index2 += 1 
+    end 
+  else 
+    item_hash[:count] = 1 
+    new_cart << item_hash 
   end 
+  #   if new_cart[index]
+  #     new_cart[item_name][:count] += 1 
+  #   else
+  #     new_cart[item_name] = item_hash[item_name]
+  #     new_cart[item_name][:count] = 1 
+  # end 
 end 
   new_cart
 end 
