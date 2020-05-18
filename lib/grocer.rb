@@ -20,7 +20,7 @@ def consolidate_cart(cart)
   index = 0 
   cart.each do |item_hash|
     item = find_item_by_name_in_collection(item_hash[:item], new_cart)
-    #binding.pry 
+     
     if item
       index2 = 0 
       while index2 < new_cart.length 
