@@ -1,3 +1,4 @@
+require "pry"
 def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
@@ -16,9 +17,11 @@ def consolidate_cart(cart)
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   new_cart = []
+  index = 0 
   cart.each do |item_hash|
     item_name = item_hash.keys[0]
-    if new_cart[item_name]
+    binding.pry 
+    if new_cart[index]
       new_cart[item_name][:count] += 1 
     else
       new_cart[item_name] = item_hash[item_name]
