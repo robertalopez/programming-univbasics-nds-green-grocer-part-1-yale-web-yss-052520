@@ -19,7 +19,7 @@ def consolidate_cart(cart)
   new_cart = []
   index = 0 
   cart.each do |item_hash|
-     = item_hash.keys[0]
+    item_name = 
     binding.pry 
     if new_cart[index]
       new_cart[item_name][:count] += 1 
