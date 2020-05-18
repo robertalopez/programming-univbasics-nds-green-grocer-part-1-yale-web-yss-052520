@@ -17,10 +17,12 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   new_cart = {}
   cart.each do |item_hash|
-    item_hash.each do |key, value|
-    new_cart[key] ||= value 
-    new_cart[key][:count] ||= 0
-    new_cart[key][:count] += 1 
+    item_name = item.keys[0]
+    if new_cart[item_name]
+      new_cart[item_name][:count] += 1 
+    else
+      new_cart[item_name] = item_hash[item_name]
+      new_cart[item_name][:count] = 1 
   end 
 end 
   new_cart
