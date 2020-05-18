@@ -19,9 +19,9 @@ def consolidate_cart(cart)
   cart.each do |thing|
     thing.each do |key, value|
       new_cart[key] ||= value 
-      new_cart[key][:count] ?
-      new_cart[key][:count] += 1 :
-      new_cart[key][:count] = 1 
+      new_cart[key][count] ?
+      new_cart[key][count] += 1 :
+      new_cart[key][count] = 1 
     end
   end
   new_cart
