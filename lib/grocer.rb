@@ -18,6 +18,7 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   new_cart = []
   index = 0 
+  
   cart.each do |item_hash|
     item_name = item_hash.keys[0]
     binding.pry 
